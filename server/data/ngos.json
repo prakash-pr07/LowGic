@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Legal Aid Society",
+    "location": "Delhi",
+    "phone": "9876543210",
+    "email": "help@legalaid.org"
+  },
+  {
+    "name": "Justice For All NGO",
+    "location": "Mumbai",
+    "phone": "9123456789",
+    "email": "contact@justiceforall.org"
+  }
+]
