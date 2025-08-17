@@ -1,62 +1,57 @@
-⚖️ LoGic – Modern LegalTech Platform
+# ⚖️ LoGic – Modern LegalTech Platform  
 
-LoGic is a full-stack legal platform that connects clients with lawyers in their city, provides AI-powered legal assistance, document interpretation, and secure case management. It simplifies how clients find legal help, interact with lawyers, and manage their legal documents.
+LoGic is a full-stack legal platform that connects clients with lawyers in their city, provides AI-powered legal assistance, document interpretation, and secure case management. It simplifies how clients find legal help, interact with lawyers, and manage their legal documents.  
 
-🚀 Features
-👨‍💼 For Clients
+---
 
-Search and connect with lawyers city-wise or by specialization
+## 🚀 Features  
 
-Secure signup & login with email authentication
+### 👨‍💼 For Clients  
+- Search and connect with lawyers city-wise or by specialization  
+- Secure signup & login with email authentication  
+- Real-time chat with lawyers regarding cases  
+- Upload legal documents (like FIRs, contracts) and store them safely (Cloudinary integration)  
+- **Document Interpreter**: Upload FIR and get keyword analysis + validation checks  
+- Case history tracking and profile management  
 
-Real-time chat with lawyers regarding cases
+### 👩‍⚖️ For Lawyers  
+- Manage cases and client interactions  
+- Access uploaded legal documents from clients  
+- Upload and manage case notes & documents  
+- Dashboard to view ongoing and closed cases  
 
-Upload legal documents (like FIRs, contracts) and store them safely (Cloudinary integration)
+### 🤖 AI & Automation  
+- AI Chatbot to answer judiciary/legal queries instantly  
+- FIR Document Interpreter that analyzes uploaded FIRs and extracts important keywords  
+- Real-time notifications and updates  
 
-Document Interpreter: Upload FIR and get keyword analysis + validation checks
+### 🔐 Security & Communication  
+- JWT-based authentication  
+- Role-based access (Admin, Lawyer, Client)  
+- Real-time chat powered by Socket.io  
+- Email OTP verification for signup & password reset  
 
-Case history tracking and profile management
+---
 
-👩‍⚖️ For Lawyers
+## 🛠️ Tech Stack  
 
-Manage cases and client interactions
+| Area          | Tech Used                                      |  
+|---------------|------------------------------------------------|  
+| Frontend      | React, Redux Toolkit, Tailwind CSS             |  
+| Backend       | Node.js, Express.js                            |  
+| Database      | MongoDB                                        |  
+| Auth          | JWT, OTP-based authentication                  |  
+| Media Upload  | Cloudinary                                     |  
+| Payment       | Razorpay                                       |  
+| Realtime Comm | Socket.io                                      |  
+| AI Chat       | OpenAI API (legal Q&A + FIR interpreter)       |  
 
-Access uploaded legal documents from clients
+---
 
-Upload and manage case notes & documents
+## 📁 Project Structure  
 
-Dashboard to view ongoing and closed cases
-
-🤖 AI & Automation
-
-AI Chatbot to answer judiciary/legal queries instantly
-
-FIR Document Interpreter that analyzes uploaded FIRs and extracts important keywords
-
-Real-time notifications and updates
-
-🔐 Security & Communication
-
-JWT-based authentication
-
-Role-based access (Admin, Lawyer, Client)
-
-Real-time chat powered by Socket.io
-
-Email OTP verification for signup & password reset
-
-🛠️ Tech Stack
-Area	Tech Used
-Frontend	React, Redux Toolkit, Tailwind CSS
-Backend	Node.js, Express.js
-Database	MongoDB
-Auth	JWT, OTP-based authentication
-Media Upload	Cloudinary
-Payment	Razorpay
-Realtime Comm	Socket.io
-AI Chat	OpenAI API (legal Q&A + FIR interpreter)
-📁 Project Structure
-🔙 Backend (server/)
+### 🔙 Backend (`server/`)  
+```
 server/
 ├── data/                  # Static data like NGOs list
 ├── middleware/            # Middlewares (auth, etc.)
@@ -97,8 +92,10 @@ server/
 ├── .env
 ├── server.js
 └── package.json
+```
 
-🎨 Frontend (src/)
+### 🎨 Frontend (`src/`)  
+```
 src/
 ├── assets/
 ├── components/             # Reusable UI components
@@ -125,54 +122,63 @@ src/
 │   └── api.js
 ├── index.css
 └── index.js
+```
 
-⚡ How to Run
-Backend
+---
+
+## ⚡ How to Run  
+
+### Backend  
+```sh
 cd server
 npm install
 npm run dev
+```
 
-
-Set up .env file:
-
+Create `.env` file inside `server/` with:  
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_jwt_secret
+
 CLOUDINARY_NAME=your_cloudinary_name
 CLOUDINARY_KEY=your_cloudinary_key
 CLOUDINARY_SECRET=your_cloudinary_secret
+
 RAZORPAY_KEY=your_razorpay_key
 RAZORPAY_SECRET=your_razorpay_secret
-OPENAI_API_KEY=your_openai_key
 
-Frontend
+OPENAI_API_KEY=your_openai_key
+```
+
+---
+
+### Frontend  
+```sh
 cd src
 npm install
 npm start
+```
 
-🌐 Deployment Suggestions
+---
 
-Frontend: Vercel, Netlify
+## 🌐 Deployment Suggestions  
+- **Frontend**: Vercel, Netlify  
+- **Backend**: Render, Railway, Heroku  
+- **Database**: MongoDB Atlas  
+- **Storage**: Cloudinary  
 
-Backend: Render, Railway, Heroku
+---
 
-Database: MongoDB Atlas
+## 🙌 Acknowledgements  
+- OpenAI API for AI legal chatbot & FIR interpreter  
+- MongoDB Atlas for scalable storage  
+- Razorpay for payments  
+- Cloudinary for legal document storage  
+- Tailwind CSS for modern UI  
 
-Storage: Cloudinary
+---
 
-🙌 Acknowledgements
-
-OpenAI API for AI legal chatbot & FIR interpreter
-
-MongoDB Atlas for scalable storage
-
-Razorpay for payments
-
-Cloudinary for legal document storage
-
-Tailwind CSS for modern UI
-
-📧 Contact
-
-Created by Prakash — Full-stack developer passionate about legal tech.
-Connect on [LinkedIn] or contribute via pull requests.
+## 📧 Contact  
+Created by **Prakash** — Full-stack developer passionate about legal tech.  
+Connect on [LinkedIn] or contribute via pull requests.  
