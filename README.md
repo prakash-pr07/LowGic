@@ -1,160 +1,160 @@
-🩺 DocTreat – Modern Healthcare Platform
+⚖️ LoGic – Modern LegalTech Platform
 
-DocTreat is a full-stack healthcare platform designed to simplify and streamline interactions between patients and doctors. It enables appointment booking, secure medical document management, health history tracking, and even AI-powered consultations — all in one modern and responsive web application.
+LoGic is a full-stack legal platform that connects clients with lawyers in their city, provides AI-powered legal assistance, document interpretation, and secure case management. It simplifies how clients find legal help, interact with lawyers, and manage their legal documents.
 
 🚀 Features
-👨‍⚕️ Patients
+👨‍💼 For Clients
 
-Book doctor appointments by city or specialization
+Search and connect with lawyers city-wise or by specialization
 
-Upload and manage medical documents
+Secure signup & login with email authentication
 
-Track complete medical history
+Real-time chat with lawyers regarding cases
 
-Ask health-related queries to an AI assistant
+Upload legal documents (like FIRs, contracts) and store them safely (Cloudinary integration)
 
-View doctor profiles and provide feedback
+Document Interpreter: Upload FIR and get keyword analysis + validation checks
 
-👩‍⚕️ Doctors
+Case history tracking and profile management
 
-Manage appointments and patient interactions
+👩‍⚖️ For Lawyers
 
-Access patient medical history & uploaded documents
+Manage cases and client interactions
 
-Write and upload medical notes
+Access uploaded legal documents from clients
 
-Secure document storage via Cloudinary
+Upload and manage case notes & documents
 
-🤖 AI Assistant
+Dashboard to view ongoing and closed cases
 
-Get instant answers to common medical queries
+🤖 AI & Automation
 
-(Optional) Powered by OpenAI API integration
+AI Chatbot to answer judiciary/legal queries instantly
 
-🧾 Other Highlights
+FIR Document Interpreter that analyzes uploaded FIRs and extracts important keywords
 
-JWT-based authentication for doctors and patients
+Real-time notifications and updates
 
-Realtime messaging and notifications with Socket.io
+🔐 Security & Communication
 
-Email confirmations & appointment reminders via Nodemailer
+JWT-based authentication
 
-Role-based access (Admin, Doctor, Patient)
+Role-based access (Admin, Lawyer, Client)
 
-Modern, responsive UI built with Tailwind CSS + React
+Real-time chat powered by Socket.io
 
-| Area          | Tech Used                          |
-| ------------- | ---------------------------------- |
-| Frontend      | React, Redux Toolkit, Tailwind CSS |
-| Backend       | Node.js, Express.js                |
-| Database      | MongoDB                            |
-| Auth          | JWT-based authentication           |
-| Media Upload  | Cloudinary                         |
-| Emailing      | Nodemailer                         |
-| Realtime Chat | Socket.io                          |
-| AI Chat       | OpenAI (Optional)                  |
+Email OTP verification for signup & password reset
 
-
-
+🛠️ Tech Stack
+Area	Tech Used
+Frontend	React, Redux Toolkit, Tailwind CSS
+Backend	Node.js, Express.js
+Database	MongoDB
+Auth	JWT, OTP-based authentication
+Media Upload	Cloudinary
+Payment	Razorpay
+Realtime Comm	Socket.io
+AI Chat	OpenAI API (legal Q&A + FIR interpreter)
+📁 Project Structure
+🔙 Backend (server/)
 server/
-├── config/
-│   ├── cloudinary.js
-│   └── database.js
-├── controllers/
-│   ├── adminController.js
-│   ├── aiController.js
-│   ├── appointmentController.js
-│   ├── authController.js
-│   ├── doctorController.js
-│   ├── doctorDocumentController.js
-│   ├── medicalNoteController.js
-│   └── paymentController.js
-├── middleware/
-│   ├── authMiddleware.js
-│   └── multer.js
-├── models/
-│   ├── Admin.js
-│   ├── appointmentModel.js
-│   ├── Doctor.js
-│   ├── DoctorDocument.js
-│   ├── MedicalNote.js
-│   ├── Message.js
-│   ├── otpModel.js
-│   └── userModel.js
-├── routes/
+├── data/                  # Static data like NGOs list
+├── middleware/            # Middlewares (auth, etc.)
+│   └── authMiddleware.js
+├── models/                # MongoDB models
+│   ├── Blog.js
+│   ├── Case.js
+│   ├── ChatMessage.js
+│   ├── Document.js
+│   ├── Lawyer.js
+│   ├── Ngo.js
+│   └── User.js
+├── routes/                # API routes
 │   ├── adminRoutes.js
-│   ├── aiRoutes.js
-│   ├── appointmentRoutes.js
-│   ├── doctorRoutes.js
-│   ├── doctorDocumentRoutes.js
-│   ├── medicalNoteRoutes.js
+│   ├── aiChatRoutes.js
+│   ├── authRoutes.js
+│   ├── blogRoutes.js
+│   ├── caseRoutes.js
+│   ├── chatbotRoutes.js
+│   ├── chatRoutes.js
+│   ├── documentRoutes.js
+│   ├── lawyerRoutes.js
+│   ├── ngoRoutes.js
+│   ├── otpRoutes.js
 │   ├── paymentRoutes.js
-│   └── userRoute.js
-├── utils/
-│   ├── cloudinary.js
-│   ├── sendAppointmentEmail.js
-│   ├── sendConfirmationEmail.js
-│   ├── sendThankYouEmail.js
-│   └── socket.js
-├── index.js
+│   └── testRoutes.js
+├── scripts/               # Utility scripts
+│   ├── createAdmin.js
+│   └── seedNgos.js
+├── utils/                 # Helper services
+│   ├── geoService.js
+│   ├── otpService.js
+│   ├── otpStore.js
+│   ├── razorpay.js
+│   ├── sendEmail.js
+│   ├── sendEmailOTP.js
+│   └── sendPhoneOTP.js
+├── .env
+├── server.js
 └── package.json
 
-
+🎨 Frontend (src/)
 src/
-├── api/
-│   └── authApi.js
-├── components/
-│   ├── ChatBox.js
-│   ├── DocumentUploadPanel.js
+├── assets/
+├── components/             # Reusable UI components
+│   ├── FeaturesSection.js
 │   ├── Footer.js
-│   ├── MedicalHistoryPanel.js
 │   ├── Navbar.js
-│   └── UploadPatientDetails.js
-├── pages/
-│   ├── AdminDashboard.js
-│   ├── AskAI.js
-│   ├── BookAppointmentPage.js
-│   ├── ConnectDoctors.js
-│   ├── DoctorDashboard.js
-│   ├── DoctorProfile.js
-│   ├── Home.js
-│   ├── Login.js
-│   ├── PatientDashboard.js
-│   └── SignUp.js
-├── redux/
+│   ├── SectionWrapper.js
+│   ├── TestimonialsSection.js
+│   └── TopLawyersSection.js
+├── pages/                  # Main application pages
+│   ├── ChatbotPage.js
+│   ├── DashboardPage.js
+│   ├── FindLawyersPage.js
+│   ├── ForgotPasswordPage.js
+│   ├── LoginPage.js
+│   ├── PublicHomePage.js
+│   └── SignupPage.js
+├── redux/                  # State management
 │   ├── authSlice.js
 │   └── store.js
-├── App.js
+├── services/
+│   └── api.js              # Axios/Fetch API service
+├── utils/
+│   └── api.js
 ├── index.css
 └── index.js
 
-⚙️ Environment Variables
-
-Create a .env file in your backend (/server) with:
-
-PORT=5000
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_KEY=your_key
-CLOUDINARY_SECRET=your_secret
-
-🧪 How to Run
+⚡ How to Run
 Backend
 cd server
 npm install
 npm run dev
 
+
+Set up .env file:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_NAME=your_cloudinary_name
+CLOUDINARY_KEY=your_cloudinary_key
+CLOUDINARY_SECRET=your_cloudinary_secret
+RAZORPAY_KEY=your_razorpay_key
+RAZORPAY_SECRET=your_razorpay_secret
+OPENAI_API_KEY=your_openai_key
+
 Frontend
-cd client
+cd src
 npm install
 npm start
 
-🌐 Deployment
+🌐 Deployment Suggestions
 
-Frontend: Vercel / Netlify
+Frontend: Vercel, Netlify
 
-Backend: Render / Railway / Heroku
+Backend: Render, Railway, Heroku
 
 Database: MongoDB Atlas
 
@@ -162,18 +162,17 @@ Storage: Cloudinary
 
 🙌 Acknowledgements
 
-OpenAI API – for AI medical assistant
+OpenAI API for AI legal chatbot & FIR interpreter
 
-MongoDB – scalable database
+MongoDB Atlas for scalable storage
 
-Cloudinary – secure media storage
+Razorpay for payments
 
-Tailwind CSS – rapid UI styling
+Cloudinary for legal document storage
+
+Tailwind CSS for modern UI
 
 📧 Contact
 
-👨‍💻 Created by Prakash — Full-stack developer passionate about healthcare tech.
-
-LinkedIn: [Your LinkedIn Profile]
-
-Contributions: Feel free to open a PR 🚀
+Created by Prakash — Full-stack developer passionate about legal tech.
+Connect on [LinkedIn] or contribute via pull requests.
